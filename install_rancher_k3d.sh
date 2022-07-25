@@ -10,7 +10,7 @@ k3d cluster create k3d-rancher \
     --api-port 6550 \
     --servers 1 \
     --agents 3 \
-    --image rancher/k3s:latest \
+    --image rancher/k3s:v1.20.10-k3s1 \
     --port 443:443@loadbalancer \
     --wait --verbose
 k3d cluster list
@@ -40,7 +40,7 @@ helm repo update
 kubectl create namespace cattle-system
 helm install rancher rancher-latest/rancher \
     --namespace cattle-system \
-    --version=2.6.6 \
+    --version=2.6.1 \
     --set hostname=rancher.localhost \
     --set bootstrapPassword=congratsthanandayme \
     --wait --debug
