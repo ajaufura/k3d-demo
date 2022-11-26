@@ -50,3 +50,5 @@ date
 
 echo https://rancher.localhost/dashboard/?setup=$(kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}')
 #### Modified version of Source : https://itnext.io/kubernetes-rancher-cluster-manager-2-6-on-your-macos-laptop-with-k3d-k3s-in-5-min-8acdb94f3376
+### To access rancher UI : https://rancher.localhost  ### cert error, type : "thisisunsafe" when on page 
+### To taint (unschedule) the control node : kubectl taint nodes k3d-k3d-rancher-server-0 key1=value1:NoSchedule
